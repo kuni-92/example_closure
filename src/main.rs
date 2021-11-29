@@ -8,10 +8,16 @@ fn simulated_expensive_calculation(intensity: u32) -> u32 {
 }
 
 fn generate_workout(intensity: u32, random_value: u32) {
+    let expensive_result = simulated_expensive_calculation(intensity);
+
     if intensity < 25 {
-        println!(
+         println!(
             "Today, do {} push up!",
-            simulated_expensive_calculation(intensity)
+            expensive_result
+        );
+        println!(
+            "Next, do {} shitups!",
+            expensive_result
         );
     } else {
         if random_value == 3 {
@@ -19,7 +25,7 @@ fn generate_workout(intensity: u32, random_value: u32) {
         } else {
             println!(
                 "Today, ran for{} minutes!",
-                simulated_expensive_calculation(intensity)
+                expensive_result
             );
         }
     }
